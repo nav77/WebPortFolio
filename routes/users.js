@@ -8,7 +8,7 @@ function userspage(req, res, next) {
     'users', 
     { 
       title: 'Users',
-      userName: 'Zhouxuan'
+      userName: 'Navya'
     }
   );
 }

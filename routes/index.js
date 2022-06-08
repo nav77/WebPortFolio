@@ -1,29 +1,44 @@
 var express = require('express');
 var router = express.Router();
+var fs = require('fs');
+
 
 /* GET home page. */
-router.get('/', home);
-
-function home(req, res, next) {
-  res.render(
-    'index', 
-    { 
-      title: 'Home',
-      userName: 'Julio'
-    }
-  );
-}
-
+router.get('/', (req, res, next) => {
+  res.render('Home', {
+    title: 'Home',
+    userName: 'Navya'
+  });
+});
 
 /* GET About page. */
-router.get('/about', function(req, res, next) {
-  res.render('index', { title: 'About', userName: 'Julio' });
+router.get('/about', function (req, res, next) {
+  res.render('Aboutme', { title: 'About', userName: 'Navya' });
 });
 
 /* GET Projects page. */
-router.get('/projects', function(req, res, next) {
-  res.render('index', { title: 'Projects', userName: 'Julio' });
+router.get('/projects', function (req, res, next) {
+  res.render('Projects', { title: 'Projects', userName: 'Navya' });
 });
 
+/* GET Services page. */
+router.get('/services', function (req, res, next) {
+  res.render('Services', { title: 'Services', userName: 'Navya' });
+});
+
+/* GET Contacts me  page. */
+router.get('/contacts', function (req, res, next) {
+  res.render('Contactme', { title: 'Contacts', userName: 'Navya' });
+});
+
+
+/*get my resume
+router.get('/myresume',(req,res,next)=>{
+  var tempFile="/images/myresume.pdf";
+  fs.readFile(tempFile,(err,data)=>{
+    console.log(data)
+  })  
+  
+})*/
 
 module.exports = router;
